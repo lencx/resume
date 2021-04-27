@@ -16,15 +16,15 @@ const ResumeHead: FC<ResumeHeadProps> = (props) => {
 
   return (
     <div className="resume-head">
-      <h2>{name}</h2>
+      <span className="name">{name}</span>
       <div className="">
         <span>{sex}</span>
-        {' / '}
+        {' | '}
         <span>{birthday}</span>
       </div>
       <div>
         <span>{education}</span>
-        {' / '}
+        {' | '}
         <span>{major}</span>
       </div>
     </div>
