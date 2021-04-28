@@ -1,34 +1,25 @@
-import React, { useEffect, useRef } from 'react';
-import { useReactToPrint } from 'react-to-print';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
-import Head, { ResumeHeadProps } from './head'
+import FormItem from '../../components/FormItem';
 
 import './index.scss';
 
-const headInfo: ResumeHeadProps = {
-  name: '小白',
-  sex: '男',
-  birthday: '2000.01.01',
-  education: '本科',
-  major: '计算机专业',
-};
-
 export default () => {
-  const resumeRef = useRef(null);
-  const handlePrint = useReactToPrint({
-    content: () => resumeRef.current,
-  });
+  const history = useHistory();
 
-  useEffect(() => {
-    document.title = `${headInfo.name}的简历`
-  }, [])
+  const handlePreview = () => {
+    // TODO: base64 params
+    history.push('/xxx');
+  }
 
   return (
-    <div className="home">
-      <span className="pdf-btn" onClick={handlePrint}>下载PDF</span>
-      <div ref={resumeRef}>
-        <Head {...headInfo} />
-      </div>
+    <div className="home-page">
+      <FormItem label="Repo" />
+      <FormItem label="URL" />
+      <FormItem label="Theme" />
+      {/* TODO: online edit */}
+      <button onClick={handlePreview}>预览</button>
     </div>
   )
 }
