@@ -1,0 +1,9 @@
+.form-item {
+  span {
+    &::after {
+      content: ':';
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+}

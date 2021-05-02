@@ -14,12 +14,14 @@
   "homepage": "https://github.com/lencx/resume",
   "bugs": "https://github.com/lencx/resume/issues",
   "dependencies": {
+    "lodash": "^4.17.21",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-router-dom": "^5.2.0",
     "react-to-print": "^2.12.4"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.168",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.1.7",

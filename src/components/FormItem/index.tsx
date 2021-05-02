@@ -1,25 +1,30 @@
 import React, { FC } from 'react';
 
-interface FormItemProps {
+import './index.scss';
+
+export interface FormItemProps {
+  title: string;
   label: string;
-  onChange?: (val: string) => void;
+  onChange?: (val: string, label: string) => void;
+  placeholder?: string;
 }
 
-const FormItem: FC<FormItemProps> = ({ label, onChange }) => {
+const FormItem: FC<FormItemProps> = ({ label, title, onChange, placeholder }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange && onChange(e.target.value);
+    onChange && onChange(e.target.value || '', label);
   }
 
   return (
-    <div>
-      <span>{label}</span>
-      <input type="text" onChange={handleChange} />
+    <div className="form-item">
+      <span>{title}</span>
+      <input type="text" onChange={handleChange} placeholder={placeholder} />
     </div>
   )
 }
 
 FormItem.defaultProps = {
   label: '',
+  placeholder: '',
 };
 
 export default FormItem;
