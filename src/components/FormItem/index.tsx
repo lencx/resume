@@ -3,8 +3,8 @@ import React, { FC } from 'react';
 import './index.scss';
 
 export interface FormItemProps {
-  title: string;
   label: string;
+  title?: string;
   onChange?: (val: string, label: string) => void;
   placeholder?: string;
   value?: string;

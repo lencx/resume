@@ -1,5 +1,11 @@
 import dayjs from 'dayjs';
 
+import { resumeTypeOptions } from './constant';
+
+export const getResumeType = (val: string, key: string = 'label') => (
+  (resumeTypeOptions.find((i) => i.value === val) as any)[key]
+);
+
 export function copyToClipboard(str: string) {
   const el = document.createElement('textarea');
   el.value = str;
@@ -31,4 +37,18 @@ export function diffTime(start: any, end?: any) {
   const val = dayjs(end ? end : new Date()).diff(dayjs(start), 'year');
   if (val < 0 || isNaN(val)) return 0;
   return val;
+}
+
+export function fmtResumeAddr(data: string) {
+  const v1 = data.split('|');
+  if (/^http/.test(data)) return { type: v1[0], link: data };
+
+  const v2 = v1[1].split('/');
+  return {
+    type: v1[0],
+    username: v2.shift(),
+    repo: v2.shift(),
+    branch: v2.shift(),
+    path: v2.join('/'),
+  };
 }

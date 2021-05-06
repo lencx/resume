@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { getVal, diffTime } from '@/utils';
+import { getVal, diffTime } from '@/utils/tools';
 
 import maleIcon from './img/male.png';
 import femaleIcon from './img/female.png';

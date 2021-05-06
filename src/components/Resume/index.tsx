@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { getVal } from '@/utils';
+import { getVal } from '@/utils/tools';
 
 import Head from './Head';
 import Content from './Content';

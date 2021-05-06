@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
+import { useParams } from 'react-router-dom';
 
 import Resume from '@comps/Resume';
 import Spin from '@comps/Spin';
-import { copyToClipboard, getVal } from '@/utils';
 import useResume from '@/hooks/useResume';
+import { copyToClipboard, getVal, fmtResumeAddr } from '@/utils/tools';
 
 import './index.scss';
 
@@ -12,6 +13,7 @@ import './index.scss';
 
 export default () => {
   const resumeRef = useRef(null);
+  const params: any = useParams();
   const handlePrint = useReactToPrint({
     content: () => resumeRef.current,
   });
@@ -19,7 +21,11 @@ export default () => {
   const { resumeData, loading, reqResume } = useResume();
 
   useEffect(() => {
-    reqResume();
+    if (params?.resume) {
+      const _data = fmtResumeAddr(atob(params?.resume || ''));
+      // console.log('«17» /views/home/index.tsx ~> ', a);
+      reqResume(_data);
+    }
   }, [])
 
   useEffect(() => {
