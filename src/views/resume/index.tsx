@@ -12,7 +12,6 @@ import './index.scss';
 
 export default () => {
   const resumeRef = useRef(null);
-  const fn = useRef<any>(null);
   const handlePrint = useReactToPrint({
     content: () => resumeRef.current,
   });
@@ -25,8 +24,6 @@ export default () => {
 
   useEffect(() => {
     if (resumeData) {
-      let _fn = getVal(resumeData);
-      fn.current = _fn;
       document.title = `${getVal(resumeData, '个人信息', '姓名')}的简历`
     }
   }, [resumeData])
@@ -52,7 +49,7 @@ export default () => {
           <span className="pdf-btn" onClick={handlePrint}>下载PDF</span>
           <span className="share-btn" onClick={handleShare}>分享简历</span>
         </div>
-        <span className="lasttime">最后更新时间: {fn.current && fn.current('最后更新时间')}</span>
+        <span className="lasttime">最后更新时间: {getVal(resumeData, '最后更新时间')}</span>
       </div>
       <div className="resume-card">
         <div ref={resumeRef}><Resume dataSource={resumeData} /></div>
