@@ -17,7 +17,7 @@ export default () => {
     content: () => resumeRef.current,
   });
 
-  const { resumeData, loading, reqResume } = useResume(true);
+  const { resumeData, loading, reqResume } = useResume();
 
   useEffect(() => {
     reqResume();
