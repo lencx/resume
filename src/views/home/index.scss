@@ -27,5 +27,21 @@
     border: none;
     color: #47c791;
     cursor: pointer;
+    transition-duration: 0.25s;
+
+    &:disabled {
+      color: #d2d2d2;
+      cursor:not-allowed;
+    }
+
+    &:not(:disabled) {
+      &:hover {
+        background: #f87da9;
+        // border: solid 1px #fff;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+
   }
 }

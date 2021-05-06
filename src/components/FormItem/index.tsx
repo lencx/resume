@@ -7,9 +7,10 @@ export interface FormItemProps {
   label: string;
   onChange?: (val: string, label: string) => void;
   placeholder?: string;
+  value?: string;
 }
 
-const FormItem: FC<FormItemProps> = ({ label, title, onChange, placeholder }) => {
+const FormItem: FC<FormItemProps> = ({ label, title, value, onChange, placeholder }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange && onChange(e.target.value || '', label);
   }
@@ -21,6 +22,7 @@ const FormItem: FC<FormItemProps> = ({ label, title, onChange, placeholder }) =>
         type="text"
         onChange={handleChange}
         placeholder={placeholder}
+        value={value}
       />
     </div>
   )

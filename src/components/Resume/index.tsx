@@ -4,12 +4,15 @@ import { getVal } from '@/utils';
 
 import Head from './Head';
 import Content from './Content';
-import data from './me.json';
 
 import './index.scss';
 
-export default () => {
-  const fn = getVal(data);
+interface ResumeProps {
+  dataSource: any;
+}
+
+const Resume: FC<ResumeProps> = ({ dataSource }) => {
+  const fn = getVal(dataSource);
 
   return (
     <div className="resume-card-content">
@@ -18,3 +21,5 @@ export default () => {
     </div>
   )
 }
+
+export default Resume;

@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
+import curry from 'lodash/curry';
 
 import Resume from '@comps/Resume';
-import { copyToClipboard } from '@/utils';
+import { copyToClipboard, curryGetVal, getVal } from '@/utils';
+import tplData from '@/../template/me.json';
 
 import './index.scss';
 
@@ -12,9 +14,10 @@ export default () => {
     content: () => resumeRef.current,
   });
 
+  const fn = getVal(tplData);
+
   useEffect(() => {
-    // TODO: fetch me.yml file
-    // document.title = `${data.name}的简历`
+    document.title = `${getVal(tplData, '个人信息', '姓名')}的简历`
   }, [])
 
   const handleShare = () => {
@@ -29,10 +32,10 @@ export default () => {
           <span className="pdf-btn" onClick={handlePrint}>下载PDF</span>
           <span className="share-btn" onClick={handleShare}>分享简历</span>
         </div>
-        <span className="lasttime">最后更新时间: 2021.05.05</span>
+        <span className="lasttime">最后更新时间: {fn('最后更新时间')}</span>
       </div>
       <div className="resume-card">
-        <div ref={resumeRef}><Resume dataSource={''} /></div>
+        <div ref={resumeRef}><Resume dataSource={tplData} /></div>
       </div>
     </div>
   )
