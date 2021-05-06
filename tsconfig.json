@@ -17,6 +17,7 @@
     "paths": {
       "@/*": ["src/*"],
       "@comps/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"],
     },
     "noEmit": true,
     "jsx": "react"

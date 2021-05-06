@@ -10,10 +10,19 @@ export default defineConfig({
   ],
   server: {
     proxy: {
-      '/api': {
+      '/github': {
         target: 'https://raw.githubusercontent.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        // secure: false,
+        // ws: true,
+        rewrite: (path) => path.replace(/^\/github/, '')
+      },
+      '/gitee': {
+        target: 'https://gitee.com',
+        changeOrigin: true,
+        // secure: false,
+        // ws: true,
+        rewrite: (path) => path.replace(/^\/gitee/, '')
       },
     }
   }

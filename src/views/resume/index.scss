@@ -1,4 +1,6 @@
 .resume-page {
+  padding: 0 10px;
+
   .op-status-bar {
     padding: 5px 0;
     display: flex;
@@ -21,6 +23,7 @@
     .lasttime {
       font-size: 14px;
       color: rgba(#fff, 0.5);
+      margin-right: 45px;
     }
   }
 }
@@ -32,4 +35,17 @@
   min-height: 80vh;
   background-color: #fff;
   color: #4a4a4a;
+}
+
+.status-container {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 24px;
 }
