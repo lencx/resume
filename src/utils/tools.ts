@@ -43,6 +43,10 @@ export function fmtResumeAddr(data: string) {
   const v1 = data.split('|');
   if (/^http/.test(data)) return { type: v1[0], link: data };
 
+  if (!v1[1]) {
+    return { msg: '简历数据配置错误' };
+  }
+
   const v2 = v1[1].split('/');
   return {
     type: v1[0],

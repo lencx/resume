@@ -5,10 +5,16 @@ import tplData from '@/../template/me.json';
 export default function useResume() {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
+  const [msg, setMsg] = useState('');
 
   const reqResume = async (data?: any) => {
     if (!data) {
       setData(tplData as any);
+      return;
+    }
+
+    if (data.msg) {
+      setMsg(data.msg);
       return;
     }
 
@@ -29,11 +35,11 @@ export default function useResume() {
     try {
       const res = await fetch(_url).then(res => res.json());
       setData(res);
-      setLoading(false);
-    } catch(e) {
-      console.error(e);
+    } catch(err) {
+      setMsg('简历数据请求失败');
     }
+    setLoading(false);
   }
 
-  return { resumeData: data, loading, reqResume };
+  return { resumeData: data, loading, reqResume, msg };
 }

@@ -18,7 +18,7 @@ export default () => {
     content: () => resumeRef.current,
   });
 
-  const { resumeData, loading, reqResume } = useResume();
+  const { resumeData, loading, reqResume, msg } = useResume();
 
   useEffect(() => {
     if (params?.resume) {
@@ -40,10 +40,10 @@ export default () => {
     alert('已复制到剪贴板，去分享');
   }
 
-  if (!resumeData || loading) {
+  if (!resumeData || loading || msg) {
     return (
       <div className="status-container">
-        {loading ? <Spin /> : <div>获取简历数据失败</div>}
+        {loading ? <Spin /> : <div>{msg || '获取简历数据失败'}</div>}
       </div>
     )
   }
