@@ -3,7 +3,7 @@ import { useReactToPrint } from 'react-to-print';
 import curry from 'lodash/curry';
 
 import Resume from '@comps/Resume';
-import { copyToClipboard, curryGetVal, getVal } from '@/utils';
+import { copyToClipboard, getVal } from '@/utils';
 import tplData from '@/../template/me.json';
 
 import './index.scss';

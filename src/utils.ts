@@ -12,18 +12,18 @@ export function copyToClipboard(str: string) {
   document.body.removeChild(el);
 };
 
-export function getVal(data: any, ...args?: string[]) {
-  function _getVal(_data) {
+export function getVal(data: any, ...args: any): any {
+  function _getVal(_data: any): string {
     if (args.length > 0) {
       return _getVal(_data[args.shift()])
     }
-    return _data;
+    return _data || '';
   }
   if (args.length > 0) {
-    return _getVal(data, ...args);
+    return _getVal(data);
   }
   return function(key: string) {
-    return data[key]
+    return data[key] || ''
   }
 }
 
