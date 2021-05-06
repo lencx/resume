@@ -16,8 +16,12 @@ const FormItem: FC<FormItemProps> = ({ label, title, onChange, placeholder }) =>
 
   return (
     <div className="form-item">
-      <span>{title}</span>
-      <input type="text" onChange={handleChange} placeholder={placeholder} />
+      {title && <span>{title}</span>}
+      <input
+        type="text"
+        onChange={handleChange}
+        placeholder={placeholder}
+      />
     </div>
   )
 }

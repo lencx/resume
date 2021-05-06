@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import RadioGroup from '../../components/Radio';
-import FormItem from '../../components/FormItem';
+import RadioGroup from '@comps/Radio';
+import FormItem from '@comps/FormItem';
 
 import './index.scss';
 
 const resumeTypeOptions = [
-  { label: 'github仓库', value: 'github' },
-  { label: 'gitee仓库', value: 'gitee' },
-  { label: '链接', value: 'url' },
+  { label: 'github仓库', value: 'github', placeholder: '<username>/<repo>/my_resume.yml' },
+  { label: 'gitee仓库', value: 'gitee', placeholder: '<username>/<repo>/my_resume.yml' },
+  { label: '链接', value: 'url', placeholder: 'https://example.com/my_resume.yml' },
 ];
 
-const getName = (val: string) => {
-  return (resumeTypeOptions.find((i) => i.value === val) as any).label;
+const getVal = (val: string, key: string = 'label') => {
+  return (resumeTypeOptions.find((i) => i.value === val) as any)[key];
 }
 
 export default () => {
@@ -40,15 +40,18 @@ export default () => {
         options={resumeTypeOptions}
         onChange={handleType}
       />
-      {formData.resumeType && (
+      {formData.resumeType ? (
         <FormItem
-          title={getName(formData.resumeType)}
+          // title={getVal(formData.resumeType)}
+          title={''}
           label={formData.resumeType}
-          placeholder="请输入"
+          placeholder={getVal(formData.resumeType, 'placeholder')}
         />
+      ) : (
+        <div className="tip">请选择加载简历数据方式</div>
       )}
       {/* TODO: online edit */}
-      <button onClick={handlePreview}>预览</button>
+      <button className="preview-btn" onClick={handlePreview}>预览</button>
     </div>
   )
 }

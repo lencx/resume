@@ -1,29 +1,20 @@
 import React, { FC } from 'react';
 
-import Head, { ResumeHeadProps } from './Head';
+import { getVal } from '@/utils';
+
+import Head from './Head';
 import Content from './Content';
+import data from './me.json';
 
-interface ResumeProps {
-  dataSource: string;
-}
+import './index.scss';
 
+export default () => {
+  const fn = getVal(data);
 
-const headInfo: ResumeHeadProps = {
-  name: '小白',
-  sex: '男',
-  birthday: '2000.01.01',
-  education: '本科',
-  major: '计算机专业',
-};
-
-
-const Resume: FC<ResumeProps> = ({}) => {
   return (
-    <div>
-      <Head {...headInfo} />
+    <div className="resume-card-content">
+      <Head dataSource={fn('个人信息')} />
       <Content />
     </div>
   )
 }
-
-export default Resume;

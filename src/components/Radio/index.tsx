@@ -35,5 +35,4 @@ const RadioGroup: FC<any> = ({ name, options, onChange }) => {
 }
 
 export { Radio, RadioGroup };
-
 export default RadioGroup;

@@ -1,8 +1,35 @@
 .resume-page {
-  .pdf-btn {
-    display: inline-block;
-    color: #989898;
-    padding: 5px 5px 5px 0;
-    cursor: pointer;
+  .op-status-bar {
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+
+    .pdf-btn {
+      display: inline-block;
+      // color: rgba(#fff, 0.6);
+      padding: 5px 5px 5px 0;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .share-btn {
+      cursor: pointer;
+    }
+
+    .lasttime {
+      font-size: 14px;
+      color: rgba(#fff, 0.5);
+    }
   }
+}
+
+.resume-card {
+	box-shadow: 0 2px 4px rgba(#000, 0.3), 3px 4px 8px rgba(#000, 0.5);
+  border-radius: 4px;
+  overflow: hidden;
+  min-height: 80vh;
+  background-color: #fff;
+  color: #4a4a4a;
 }

@@ -1,16 +1,3 @@
-.resume-head {
-  display: flex;
-  width: 100%;
-  min-height: 200px;
-  background-color: var(--theme);
-  color: #fafafa;
-  padding: 0 30px;
-  box-sizing: border-box;
-  flex-direction: column;
-  justify-content: center;
-
-  .name {
-    font-size: calc(10px + 3vmin);
-    margin: 0 0 10px;
-  }
+.resume-content {
+  padding: 20px;
 }
