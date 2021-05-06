@@ -7,9 +7,12 @@ export default function useResume() {
   const [loading, setLoading] = useState(false);
 
   const reqResume = async (data?: string) => {
+    if (!data) {
+      setData(tplData as any);
+      return;
+    }
     setLoading(true);
-    let _url = '@/../template/me.json';
-    // let _url = 'https://raw.githubusercontent.com/lencx/resume/main/template/me.json';
+    let _url = 'https://raw.githubusercontent.com/lencx/resume/main/template/me.json';
     const type: any  = 'github';
     switch (type) {
       case 'github':
