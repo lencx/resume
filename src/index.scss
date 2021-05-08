@@ -18,7 +18,11 @@ code {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-weight: 300;
+	// font-weight: 300;
+}
+
+.flex {
+  display: flex;
 }
 
 #root {
@@ -31,6 +35,8 @@ code {
 :root {
   --theme: #3C92A8;
   --black: #282c34;
+  --pink: #f87da9;
+  --blue: #4285f4;
 }
 
 @media all {

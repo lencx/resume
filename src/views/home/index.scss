@@ -36,7 +36,7 @@
 
     &:not(:disabled) {
       &:hover {
-        background: #f87da9;
+        background: var(--pink);
         // border: solid 1px #fff;
         color: #fff;
         cursor: pointer;

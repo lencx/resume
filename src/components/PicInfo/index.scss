@@ -1,0 +1,19 @@
+.picinfo {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+
+  img {
+    &.sm {
+      width: 24px;
+    }
+
+    &.md {
+      width: 36px;
+    }
+
+    &.lg {
+      width: 48px;
+    }
+  }
+}

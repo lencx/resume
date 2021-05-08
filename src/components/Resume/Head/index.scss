@@ -1,22 +1,48 @@
 .resume-head {
   display: flex;
   width: 100%;
-  min-height: 200px;
-  background-color: var(--theme);
-  color: #fafafa;
-  padding: 0 30px;
+  background-color: #fea;
+  // color: #fafafa;
+  padding: calc(10px + 5vmin) calc(10px + 3vmin);
   box-sizing: border-box;
   flex-direction: column;
   justify-content: center;
-
-  .name {
-    font-size: calc(10px + 3vmin);
-    margin: 0 0 10px;
-  }
 
   .avatar {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .info {
+    flex-direction: column;
+    justify-content: center;
+    font-size: calc(10px + 1vmin);
+
+    .name {
+      font-size: calc(10px + 3vmin);
+      margin-bottom: 3px;
+      align-items: center;
+
+      i {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        color: var(--pink);
+        background: rgba(#fff, 0.6);
+        width: 18px;
+        height: 18px;
+        text-align: center;
+        line-height: 18px;
+        margin-left: 10px;
+        border-radius: 3px;
+
+        &.male {
+          color: var(--blue);
+        }
+      }
+    }
   }
 }

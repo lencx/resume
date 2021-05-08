@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import Resume from '@comps/Resume';
 import Spin from '@comps/Spin';
@@ -24,7 +25,8 @@ export default () => {
     if (params?.resume) {
       const _data = fmtResumeAddr(atob(params?.resume || ''));
       // console.log('«17» /views/home/index.tsx ~> ', a);
-      reqResume(_data);
+      // reqResume(_data);
+      reqResume();
     }
   }, [])
 
@@ -37,7 +39,8 @@ export default () => {
 
   const handleShare = () => {
     copyToClipboard(window.location.href);
-    alert('已复制到剪贴板，去分享');
+    // alert('已复制到剪贴板，去分享');
+    toast("已复制到剪贴板，去分享")
   }
 
   if (!resumeData || loading || msg) {
