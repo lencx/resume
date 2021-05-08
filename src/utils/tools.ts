@@ -56,3 +56,10 @@ export function fmtResumeAddr(data: string) {
     path: v2.join('/'),
   };
 }
+
+export function extractLink(str: string) {
+  return str.replace(/\[(.*)\]\((.*)\)/g, ($1, $2, $3) => {
+    if (!/^http/.test($3)) return $1;
+    return `<a href="${$3}" target="_blank">${$2}</a>`;
+  });
+}

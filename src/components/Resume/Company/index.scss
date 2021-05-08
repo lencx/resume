@@ -2,11 +2,44 @@
   padding: 20px;
 
   .company-item {
-    border: solid 1px #d2d2d2;
+    border: solid 1px #eee;
     list-style: none;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 14px;
     border-radius: 4px;
+
+    img {
+      border: solid 1px #e0e0e0;
+      padding: 3px;
+      border-radius: 2px;
+      margin-right: 10px;
+    }
   }
 
+  .tag-list {
+    margin-top: 10px;
+  }
+
+  .work-list {
+    margin-top: 10px;
+
+    li {
+      display: flex;
+      margin-bottom: 6px;
+      font-size: 14px;
+
+      &::before {
+        display: inline-block;
+        content: '';
+        width: 4px;
+        height: 4px;
+        background: #777;
+        min-width: 4px;
+        margin-right: 8px;
+        margin-top: 7px;
+        // border-radius: 50%;
+        transform: rotateZ(-45deg);
+      }
+    }
+  }
 }

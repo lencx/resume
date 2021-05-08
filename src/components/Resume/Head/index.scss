@@ -21,9 +21,10 @@
     font-size: calc(10px + 1vmin);
 
     .name {
-      font-size: calc(10px + 3vmin);
+      font-size: calc(10px + 2vmin);
       margin-bottom: 3px;
       align-items: center;
+      font-weight: 500;
 
       i {
         display: inline-block;
@@ -44,5 +45,12 @@
         }
       }
     }
+  }
+
+  .info2 {
+    margin-top: 10px;
+  }
+  .info3 {
+    margin-top: 10px;
   }
 }

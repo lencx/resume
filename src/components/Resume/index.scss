@@ -1,11 +1,12 @@
 .resume-card-content {
   color: var(--black);
 
+  a {
+    color: var(--blue);
+    margin: 0 3px;
+  }
 
   ul, ol {
-    // list-style: none;
-
-    li {
-    }
+    list-style: none;
   }
 }

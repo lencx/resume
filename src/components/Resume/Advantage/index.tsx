@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 
+import Card from '@comps/Card';
+
 import './index.scss';
 
 export interface ResumeAdvantageProps {
@@ -8,10 +10,9 @@ export interface ResumeAdvantageProps {
 
 const ResumeAdvantage: FC<ResumeAdvantageProps> = ({ dataSource }) => {
   return (
-    <div className="resume-content-advantage">
-      <h3>个人优势</h3>
+    <Card title="个人优势" className="resume-content-advantage">
       <p>{dataSource}</p>
-    </div>
+    </Card>
   )
 }
 

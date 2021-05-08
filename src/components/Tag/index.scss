@@ -1,0 +1,14 @@
+.tag {
+  display: inline-block;
+  height: 20px;
+  padding: 0 8px;
+  line-height: 20px;
+  border: solid 1px #d2d2d2;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-right: 4px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

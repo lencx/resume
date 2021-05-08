@@ -16,4 +16,21 @@
       width: 48px;
     }
   }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+  .title {
+    font-weight: bold;
+    color: #4a4a4a;
+    margin-bottom: 3px;
+  }
+
+  .desc {
+    font-size: 14px;
+    color: #666;
+  }
 }
