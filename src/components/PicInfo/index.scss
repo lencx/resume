@@ -15,7 +15,15 @@
     &.lg {
       width: 48px;
     }
+
+    &.border {
+      border: solid 1px #e0e0e0;
+      padding: 3px;
+      border-radius: 2px;
+      margin-right: 10px;
+    }
   }
+
 
   .info {
     display: flex;

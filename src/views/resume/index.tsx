@@ -24,9 +24,7 @@ export default () => {
   useEffect(() => {
     if (params?.resume) {
       const _data = fmtResumeAddr(atob(params?.resume || ''));
-      // console.log('«17» /views/home/index.tsx ~> ', a);
-      // reqResume(_data);
-      reqResume();
+      reqResume(_data);
     }
   }, [])
 

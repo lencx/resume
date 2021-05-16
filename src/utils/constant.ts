@@ -3,3 +3,10 @@ export const resumeTypeOptions = [
   { label: 'gitee仓库', value: 'gitee', placeholder: 'username/repo/branch/path/resume.json' },
   { label: '链接', value: 'url', placeholder: 'https://example.com/path/resume.json' },
 ];
+
+export const mdRe = {
+  boldRe: /(\*\*|__)(.*?)\1/g,
+  linkRe: /\[([^\[]+)\]\(([^\)]+)\)/g,
+  delRe: /\~\~(.*?)\~\~/g,
+  codeRe: /\`(.*?)\`/g,
+}

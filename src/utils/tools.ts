@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-import { resumeTypeOptions } from './constant';
+import { resumeTypeOptions, mdRe } from './constant';
 
 export const getResumeType = (val: string, key: string = 'label') => (
   (resumeTypeOptions.find((i) => i.value === val) as any)[key]
@@ -57,9 +57,10 @@ export function fmtResumeAddr(data: string) {
   };
 }
 
-export function extractLink(str: string) {
-  return str.replace(/\[(.*)\]\((.*)\)/g, ($1, $2, $3) => {
-    if (!/^http/.test($3)) return $1;
-    return `<a href="${$3}" target="_blank">${$2}</a>`;
-  });
+export function extractTag(str: string) {
+  return str
+    .replace(mdRe.boldRe, '<b>$2</b>')
+    .replace(mdRe.linkRe, '<a href="$2" target="_blank">$1</a>')
+    .replace(mdRe.delRe, '<del>$1</del>')
+    .replace(mdRe.codeRe, '<code>$1</code>');
 }

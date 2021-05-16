@@ -52,5 +52,44 @@
   }
   .info3 {
     margin-top: 10px;
+
+    @media screen and (max-width: 647px) {
+      display: flex;
+      flex-direction: column;
+
+      > span {
+        margin-top: 5px;
+      }
+    }
+
+    .city,
+    .phone,
+    .email {
+      margin-right: 16px;
+      font-size: 14px;
+
+      &::before {
+        display: inline-block;
+        content: '';
+        width: 20px;
+        height: 20px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin-right: 3px;
+      }
+    }
+
+    .city::before {
+      vertical-align: -4px;
+      background-image: url('./img/addr.svg');
+    }
+    .phone::before {
+      vertical-align: -4px;
+      background-image: url('./img/phone.svg');
+    }
+    .email::before {
+      vertical-align: -5px;
+      background-image: url('./img/email.svg');
+    }
   }
 }

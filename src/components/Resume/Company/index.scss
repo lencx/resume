@@ -8,11 +8,22 @@
     padding: 14px;
     border-radius: 4px;
 
-    img {
-      border: solid 1px #e0e0e0;
-      padding: 3px;
-      border-radius: 2px;
-      margin-right: 10px;
+    .head {
+      @media screen and (min-width: 648px) {
+        display: flex;
+        justify-content: space-between;
+      }
+      @media screen and (max-width: 647px) {
+        .time {
+          display: inline-block;
+          margin-top: 10px;
+          font-size: 14px;
+          background: var(--theme);
+          color: #fff;
+          padding: 2px 10px;
+          border-radius: 10px;
+        }
+      }
     }
   }
 

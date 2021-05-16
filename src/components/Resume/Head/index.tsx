@@ -40,11 +40,9 @@ const ResumeHead: FC<ResumeHeadProps> = ({ dataSource }) => {
         <span>{diffTime(fn('出生日期'))}岁</span>
       </div>
       <div className="info3">
-        <span>{fn('所在城市')}</span>
-        {' / '}
-        <span>{fn('手机号码')}</span>
-        {' / '}
-        <span>{fn('联系邮箱')}</span>
+        <span className="city">{fn('所在城市')}</span>
+        <span className="phone">{fn('手机号码')}</span>
+        <span className="email">{fn('联系邮箱')}</span>
       </div>
     </div>
   )

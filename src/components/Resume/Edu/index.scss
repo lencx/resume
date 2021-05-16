@@ -1,3 +1,22 @@
 .resume-content-edu {
   padding: 20px;
+
+
+  .edu-item {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #efefef;
+    margin-bottom: 3px;
+    border-radius: 4px;
+
+    img {
+      background-color: #fff;
+      border: none;
+    }
+
+    .time {
+      color: #666;
+    }
+  }
 }

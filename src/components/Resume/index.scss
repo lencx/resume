@@ -1,4 +1,5 @@
 .resume-card-content {
+  background-color: #fff;
   color: var(--black);
 
   a {
@@ -8,5 +9,19 @@
 
   ul, ol {
     list-style: none;
+  }
+
+  code {
+    background-color: #ea9;
+    border-radius: 4px;
+    margin: 0 3px;
+    padding: 0 4px;
+    // color: var(--black);
+    color: #fff;
+    font-size: 12px;
+  }
+
+  del {
+    color: #777;
   }
 }

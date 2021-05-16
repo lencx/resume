@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import Tag from '@comps/Tag';
 import Card from '@comps/Card';
 import PicInfo from '@comps/PicInfo';
-import { getVal, extractLink } from '@utils/tools';
+import { getVal, extractTag } from '@utils/tools';
 
 import companyIcon from './icons/company.svg';
 
@@ -14,7 +14,7 @@ export interface ResumeCompanyProps {
 }
 
 const ResumeCompany: FC<ResumeCompanyProps> = ({ dataSource }) => {
-  return (
+  return dataSource.length > 0 ? (
     <div className="resume-content-company">
       <Card title="工作经历">
         <ul>
@@ -24,12 +24,15 @@ const ResumeCompany: FC<ResumeCompanyProps> = ({ dataSource }) => {
 
             return (
               <li key={idx} className="company-item">
-                <PicInfo
-                  size="lg"
-                  avatar={companyIcon}
-                  title={fn('公司名称')}
-                  desc={descList.join(' / ')}
-                />
+                <div className="head">
+                  <PicInfo
+                    size="lg"
+                    avatar={companyIcon}
+                    title={fn('公司名称')}
+                    desc={descList.join(' / ')}
+                  />
+                  <div className="time">{fn('在职时间')[0]} ~ {fn('在职时间')[0]}</div>
+                </div>
                 <div className="tag-list">
                   {fn('技能标签').map((i: string) => (
                     <Tag key={i}>{i}</Tag>
@@ -37,7 +40,7 @@ const ResumeCompany: FC<ResumeCompanyProps> = ({ dataSource }) => {
                 </div>
                 <ul className="work-list">
                   {fn('工作内容').map((i: string) => {
-                    return <li key={i} dangerouslySetInnerHTML={{ __html: extractLink(i) }} />;
+                    return <li key={i} dangerouslySetInnerHTML={{ __html: extractTag(i) }} />;
                   })}
                 </ul>
               </li>
@@ -46,7 +49,7 @@ const ResumeCompany: FC<ResumeCompanyProps> = ({ dataSource }) => {
         </ul>
       </Card>
     </div>
-  )
+  ) : null;
 }
 
 ResumeCompany.defaultProps = {
